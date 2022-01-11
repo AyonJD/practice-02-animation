@@ -134,7 +134,7 @@ main{
     left: 0;
     bottom: 0;
     right: 0;
-    animation: typewriter 4s steps(16) infinite alternate, blnk 900ms steps(16) infinite;
+    animation: typewriter 4s steps(16) infinite alternate, blnk 1000ms steps(16) infinite;
 }
 .banner-left .name::before{
     content: '';
@@ -170,7 +170,7 @@ main{
 }
 @keyframes blnk{
     100%{
-        background: white;
+        background: transparent;
     }
 }
 @keyframes ph {
