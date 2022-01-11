@@ -80,6 +80,7 @@ main{
 .banner{
     display: flex;
     align-items: center;
+    margin-bottom: 10rem;
 }
 .banner .banner-left{
     width: 50%;
@@ -94,8 +95,9 @@ main{
 }
 .banner .banner-left p{
     color: #fff;
-    font-size: .9em;
+    font-size: .8em;
     text-align: justify;
+    line-height: 1.3em;
     
 }
 .banner .banner-left button{
@@ -126,13 +128,13 @@ main{
     content: '';
     height: 100%;
     width: .08em;
-    background: #fff;
+    background: white;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    animation: typewriter 4s steps(16) infinite alternate, blnk 1000ms steps(16) infinite;
+    animation: typewriter 4s steps(16) infinite alternate, blnk 900ms steps(16) infinite;
 }
 .banner-left .name::before{
     content: '';
@@ -168,7 +170,7 @@ main{
 }
 @keyframes blnk{
     100%{
-        background: transparent;
+        background: white;
     }
 }
 @keyframes ph {
@@ -223,6 +225,74 @@ main{
     96%{
         content: 'Programming Hero|';
     }
+}
+/* Banner End */
+.photo-album{
+    margin-bottom: 10rem;
+}
+.photo-album .common{
+    width: 15rem;
+    height: 18rem;
+    position: relative;
+}
+.photo-album .common .photo{
+    width: 15rem;
+    height: 18rem;
+    position: relative;
+}
+.photo-album .common .photo img{
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+}
+
+.photo-album .common .details{
+    text-align: center;
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+}
+.photo-album .common .details h1{
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: 900;
+}
+.photo-album .common .details p{
+    font-size: .9rem;
+    color: #000;
+    font-weight: 800;
+}
+/* Border animation start */
+.border{
+    background: #0984e3;
+    box-shadow: 0 0 10px #0984e3;
+    position: absolute;
+    z-index: 5;
+}
+.border.border-top, .border.border-bottom{
+    width: 14.8rem;
+    height: 4px;
+}
+.border.border-left, .border.border-right{
+    width: 4px;
+    height: 18rem;
+}
+.border.border-top{
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.border.border-bottom{
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.border.border-left{
+    left: 0;
+}
+.border.border-right{
+    right: 0;
 }
 
 
