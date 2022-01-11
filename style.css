@@ -85,7 +85,7 @@ main{
     width: 50%;
     margin-right: 2.5em;
 }
-.banner .banner-left h1{
+.banner .banner-left .name, .ph{
     color: #fff;
     margin-bottom: .5em;
     font-size: 3em;
@@ -122,16 +122,107 @@ main{
     width: 100%;
 }
 /* Text animation */
-.banner-left h1::before{
+.banner-left .name::after{
     content: '';
     height: 100%;
-    width: 100%;
-    background: red;
+    width: .08em;
+    background: #fff;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    animation: typewriter 4s steps(16) infinite alternate, blnk 1000ms steps(16) infinite;
+}
+.banner-left .name::before{
+    content: '';
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: typewriter 4s steps(16) infinite alternate;
+}
+.banner-left .ph{
+    font-size: 2em;
+    position: relative;
+    color: transparent;
+    white-space: nowrap;
+}
+.banner-left .ph::before{
+    content: 'Programming Hero';
+    color: aqua;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    animation: ph 4s steps(16) infinite .1s alternate;
+}
+
+@keyframes typewriter {
+    100%{
+        left: 110%;
+    }
+}
+@keyframes blnk{
+    100%{
+        background: transparent;
+    }
+}
+@keyframes ph {
+    0%{
+        content: '|';
+    }
+    6%{
+        content: 'P|';
+    }
+    12%{
+        content: 'Pr|';
+    }
+    18%{
+        content: 'Pro|';
+    }
+    24%{
+        content: 'Prog|';
+    }
+    30%{
+        content: 'Progr|';
+    }
+    36%{
+        content: 'Progra|';
+    }
+    42%{
+        content: 'Program|';
+    }
+    48%{
+        content: 'Programm|';
+    }
+    54%{
+        content: 'Programmi|';
+    }
+    60%{
+        content: 'Programmin|';
+    }
+    66%{
+        content: 'Programming|';
+    }
+    72%{
+        content: 'Programming |';
+    }
+    78%{
+        content: 'Programming H|';
+    }
+    84%{
+        content: 'Programming He|';
+    }
+    90%{
+        content: 'Programming Her|';
+    }
+    96%{
+        content: 'Programming Hero|';
+    }
 }
 
 
