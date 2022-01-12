@@ -32,7 +32,6 @@ body{
     align-items: center;
     margin-right: 5em;
 }
-.navbar .menu{}
 .navbar .menu ul{
     display: flex;
 }
@@ -105,7 +104,8 @@ main{
     padding: 10px 30px;
     margin-top: 1em;
     font-weight: 600;
-    background-color: #0984e3;
+    background-color: aqua;
+    box-shadow: 0 0 10px aqua;
     color: #fff;
     outline: none;
     border: none;
@@ -114,7 +114,7 @@ main{
     transition: .1s ease-in;
 }
 .banner .banner-left button:hover{
-    box-shadow: 0px 0px 40px #0984e3;
+    box-shadow: 0px 0px 40px aqua;
     -webkit-box-reflect: below 10px linear-gradient(transparent, #0985e33d);
 }
 .banner .banner-right{
@@ -239,6 +239,7 @@ main{
     width: 15rem;
     height: 18rem;
     position: relative;
+    overflow: hidden;
 }
 .photo-album .common .photo img{
     width: 100%;
@@ -252,47 +253,82 @@ main{
     bottom: 15%;
     left: 0;
     right: 0;
+    transform: translateY(200%);
+    transition: .3s ease-in;
+}
+.photo-album .common .photo::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #00000086;
+    transform: translateY(100%);
+    transition: .3s ease-in;
+    z-index: 8;
 }
 .photo-album .common .details h1{
     font-size: 1.5rem;
-    color: #000;
+    color: aqua;
     font-weight: 900;
 }
 .photo-album .common .details p{
     font-size: .9rem;
-    color: #000;
+    color: aqua;
     font-weight: 800;
 }
 /* Border animation start */
 .border{
-    background: #0984e3;
-    box-shadow: 0 0 10px #0984e3;
+    background: aqua;
+    box-shadow: 0 0 10px aqua;
     position: absolute;
-    z-index: 5;
+    transition: .3s ease-in;
+    z-index: 9;
 }
 .border.border-top, .border.border-bottom{
     width: 14.8rem;
-    height: 4px;
+    height: 5px;
 }
 .border.border-left, .border.border-right{
-    width: 4px;
+    width: 5px;
     height: 18rem;
 }
 .border.border-top{
     top: 0;
-    left: 0;
-    right: 0;
+    right: 100%;
 }
 .border.border-bottom{
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 100%;
 }
 .border.border-left{
     left: 0;
+    top: 100%;
 }
 .border.border-right{
     right: 0;
+    bottom: 100%;
+}
+.photo-album .common .photo:hover .border.border-top{
+    right: 0;
+}
+.photo-album .common .photo:hover .border.border-right{
+    bottom: 0;
+}
+.photo-album .common .photo:hover .border.border-bottom{
+    left: 0;
+}
+.photo-album .common .photo:hover .border.border-left{
+    top: 0;
+}
+.photo-album .common .photo:hover.photo::after{
+    transform: translateY(0);
+}
+.photo-album .common .photo:hover.details{
+    transform: translateY(0);
 }
 
 
